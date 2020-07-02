@@ -1,5 +1,5 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
-[![pypi-version]][pypi]
+[![django-version]][django]
 
 # Machine Learning Models
 
@@ -37,7 +37,5 @@ Please make sure to update tests as appropriate.
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/bijesh-raj-kunwar-7a1759195/
-[pypi-version]: https://img.shields.io/pypi/v/ml_models
-[pypi]: https://pypi.org/project/djangorestframework/
-[django-version]: https://img.shields.io/pypi/djversions/ml_models
-[django]: https://www.djangoproject.com/
+[django-version]: https://img.shields.io/pypi/v/django?label=django-version
+[django]: https://pypi.org/project/djangorestframework/
