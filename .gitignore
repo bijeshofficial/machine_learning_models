@@ -114,3 +114,7 @@ GitHub.sublime-settings
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+
+# Folder view configuration files #
+.DS_Store
+Desktop.ini
