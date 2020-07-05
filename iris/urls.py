@@ -5,4 +5,5 @@ app_name = 'iris'
 
 urlpatterns = [
     path('', views.iris,  name = 'iris'),
+    path('iris/', views.predict_changes, name = 'submit_prediction'),
 ]
