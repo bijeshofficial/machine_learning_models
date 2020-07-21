@@ -4,7 +4,7 @@ from django.http import JsonResponse
 
 # Create your views here.
 def iris(request):
-    return render(request, 'iris.html')
+    return render(request, 'iris/iris.html')
 
 def predict_changes(request):
     if request.POST.get('action') == 'post':

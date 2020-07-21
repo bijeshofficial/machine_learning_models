@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'iris/base.html' %}
 
 {% block main %}
 
@@ -66,19 +66,19 @@
                 url: '{% url "iris:submit_prediction" %}',
                 data: {
                     sepal_length:$('#sepal_length').val(),
-                    sepal_width:$('#sepa_width').val(),
+                    sepal_width:$('#sepal_width').val(),
                     petal_length:$('#petal_length').val(),
                     petal_width:$('#petal_width').val(),
                     csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
                     action: 'post',
                 },
                 success:function(json){
-                    document.forms['post-form'].reset();
-                    document.getElementById('prediction').innerHtml = json['result']
-                    document.getElementById('sl').innerHtml = json['sepal_length']
-                    document.getElementById('sw').innerHtml = json['sepal_width']
-                    document.getElementById('pl').innerHtml = json['petal_length']
-                    document.getElementById('pw').innerHtml = json['petal_width']
+                    document.forms["post-form"].reset();
+                    document.getElementById("prediction").innerHTML = json['result']
+                    document.getElementById("sl").innerHTML = json['sepal_length']
+                    document.getElementById("sw").innerHTML = json['sepal_width']
+                    document.getElementById("pl").innerHTML = json['petal_length']
+                    document.getElementById("pw").innerHTML = json['petal_width']
                 },
                 error:function(xhr,errmsg,err){
 
