@@ -15,7 +15,7 @@ def predict_changes(request):
         petal_width = float(request.POST.get('petal_width'))
     
         #Unpickle the model
-        model = pd.read_pickle('../pickles/iris_scv.pkl')
+        model = pd.read_pickle('pickles/iris_scv.pkl')
 
         #Make prediction
         result = model.predict([[sepal_length,sepal_width,petal_length,petal_width]])
