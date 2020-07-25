@@ -7,7 +7,7 @@ def iris(request):
     return render(request, 'iris/iris.html')
 
 def predict_changes(request):
-    if request.POST.get('action') == 'post':
+    if request.method:
         #Receive data from the client
         sepal_length = float(request.POST.get('sepal_length'))
         sepal_width = float(request.POST.get('sepal_width'))
@@ -18,7 +18,7 @@ def predict_changes(request):
         model = pd.read_pickle('pickles/iris_scv.pkl')
 
         #Make prediction
-        result = model.predict([[sepal_length,sepal_width,petal_length,petal_width]])
+        result = model.predict([[2.1,2.2,2.1,2.1]])
 
         #Saved the prediction in this new variable
         classification = result[0]
