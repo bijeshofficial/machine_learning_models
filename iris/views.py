@@ -15,21 +15,22 @@ def iris(request):
         #Unpickle the model
         model = pd.read_pickle('./iris/pickles/iris_scv.pkl')
 
-        print(model)
-
         #Make prediction
         result = model.predict([[sepal_length,sepal_width,petal_length,petal_width]])
 
         #Saved the prediction in this new variable
         classification = result[0]
 
-        print(classification)
 
-        # context = {
-        #     'classification': classification,
-        # }
+        context = {
+            'classification': classification,
+            'sepal_length': sepal_length,
+            'sepal_width': sepal_width,
+            'petal_length': petal_length,
+            'petal_width': petal_width,
+        }
 
-        # return render(request, 'iris/iris.html', context)
+        return render(request, 'iris/iris.html', context)
 
     else:
         return render(request, 'iris/iris.html')
