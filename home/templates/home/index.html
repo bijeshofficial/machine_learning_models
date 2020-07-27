@@ -1,0 +1,20 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block main %}
+    <div class="container">
+        <div class="card-group vgr-cards">
+        {% for item in card %}
+            <div class="card">
+                <div class="card-img-body">
+                    <img class="card-img" src={{ item.image.url }} alt="Card image cap">
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">{{item.title}}</h4>
+            <p class="card-text">{{ item.description }}</p>
+            <a href="{{ item.get_absolute_url }}" class="btn btn-outline-primary">Primary</a>
+        </div>
+
+    {% endfor %}
+    </div>
+
+{% endblock main %}

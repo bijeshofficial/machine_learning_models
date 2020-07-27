@@ -1,4 +1,4 @@
-{% extends 'iris/base.html' %}
+{% extends 'home/base.html' %}
 {% load static %}
 {% block main %}
   <!-- End of modal -->
@@ -48,7 +48,7 @@
                 <li class="list-group-item">Petal Width: {{ petal_width }} cm</li>
             </ul>
             <div class="card-body" style ="text-align: center">
-                <button class = "btn btn-primary">View Results</button>
+                <a class = "btn btn-primary" href=" {% url 'iris_results' %} "> View Results </a>
             </div>
             </div>
         </div>
