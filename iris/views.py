@@ -1,5 +1,7 @@
 from django.shortcuts import render
 import pandas as pd
+from .models import IrisResult
+# from django.contrib import messages
 
 # Create your views here.
 def iris(request):
@@ -20,7 +22,8 @@ def iris(request):
 
         #Saved the prediction in this new variable
         classification = result[0]
-
+        
+        IrisResult.objects.create(sepal_length = sepal_length, sepal_width = sepal_width, petal_length = petal_length, petal_width = petal_width, classification = classification)
 
         context = {
             'classification': classification,
@@ -35,4 +38,10 @@ def iris(request):
     else:
         return render(request, 'iris/iris.html')
 
-    
+
+def results(request):
+
+    context = {
+        'dataset' : IrisResult.objects.all(),
+    }
+    return render(request, 'iris/results.html', context)

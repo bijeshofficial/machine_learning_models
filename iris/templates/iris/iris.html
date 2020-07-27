@@ -1,5 +1,5 @@
 {% extends 'iris/base.html' %}
-
+{% load static %}
 {% block main %}
   <!-- End of modal -->
   <!-- Main form -->
@@ -11,39 +11,44 @@
                 {% csrf_token %}
                 <div class="form-group">
                     <label>Sepal Length (cm)</label>
-                    <input type="number" step="0.1" class="form-control" name="sepal_length" placeholder="" required>
+                    <input type="number" step="0.1" class="form-control" name="sepal_length" placeholder="4.3 ~ 7.9" required>
                 </div>
                 <div class="form-group">
                     <label>Sepal Width (cm)</label>
-                    <input type="number" step="0.1" class="form-control" name="sepal_width" placeholder="" required>
+                    <input type="number" step="0.1" class="form-control" name="sepal_width" placeholder="2 ~ 4.4" required>
                 </div>
                 <div class="form-group">
                     <label>Petal Length (cm)</label>
-                    <input type="number" step="0.1" class="form-control" name="petal_length" placeholder="" required>
+                    <input type="number" step="0.1" class="form-control" name="petal_length" placeholder="1 ~ 6.9" required>
                 </div>
                 <div class="form-group">
                     <label>Petal Width (cm)</label>
-                    <input type="number" step="0.1" class="form-control" name="petal_width" placeholder="" required>
+                    <input type="number" step="0.1" class="form-control" name="petal_width" placeholder="0.1 ~ 2.5" required>
                 </div>
-                <button type="submit" value="Submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Submit</button>
+                <button type="submit" value="Submit" class="btn btn-primary" data-toggle="modal" >Submit</button>
             </form>
         </div>
         <div class="col-md-4">
             <div class="card" style="width: 30rem;">
-            <img class="card-img-top" src="..." alt="{{ classification }}">
+            {% if classification == 'Iris-Setosa' %}
+            <img class="card-img-top" src="{% static "images/iris-setosa.jpg" %}" alt="{{ classification }}">
+            {% elif classification == 'Iris-Virginica' %}
+            <img class="card-img-top" src="{% static "images/iris-virginica.jpg" %}" alt="{{ classification }}">
+            {% elif classification == 'Iris-Versicolor' %}
+            <img class="card-img-top" src="{% static "images/iris-versicolor.jpg" %}" alt="{{ classification }}">
+            {% endif %}
             <div class="card-body">
                 <h5 class="card-title" style = "text-align: center">The Predicted Iris Flower is {{classification}} </h5>
-                <p class="card-text">{{classification}}</p>
+                <p class="card-text" ><h1 style = "text-align: center">{{classification}}</h1></p>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">Sepal Length: {{ sepal_length }}</li>
-                <li class="list-group-item">Sepal Width: {{ sepal_width }}</li>
-                <li class="list-group-item">Petal Length: {{ petal_length }}</li>
-                <li class="list-group-item">Petal Width: {{ petal_width }}</li>
+                <li class="list-group-item">Sepal Length: {{ sepal_length }} cm</li>
+                <li class="list-group-item">Sepal Width: {{ sepal_width }} cm</li>
+                <li class="list-group-item">Petal Length: {{ petal_length }} cm</li>
+                <li class="list-group-item">Petal Width: {{ petal_width }} cm</li>
             </ul>
-            <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+            <div class="card-body" style ="text-align: center">
+                <button class = "btn btn-primary">View Results</button>
             </div>
             </div>
         </div>

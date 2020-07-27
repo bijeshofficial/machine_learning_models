@@ -1,0 +1,37 @@
+{% extends 'iris/base.html' %}
+
+{% block main %}
+
+<div class = "container pt-5">
+    <div class = "row">
+        <h1>Prediction Result</h1>
+
+        <table class="table">
+        <thead class="thead-dark">
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">Sepal Length</th>
+            <th scope="col">Sepal Width</th>
+            <th scope="col">Petal Length</th>
+            <th scope="col">Petal Width</th>
+            <th scope="col">Classification</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in dataset %}
+                 <tr>
+                <td>{{ data.id }}</td>
+                <td>{{ data.sepal_length }}</td>
+                <td>{{ data.sepal_width }}</td>
+                <td>{{ data.petal_length }}</td>
+                <td>{{ data.petal_width }}</td>
+                <td>{{ data.classification }}</td>
+                </tr> 
+            {% endfor %}
+        </tbody>
+        </table>
+
+    </div>
+</div>
+
+{% endblock main %}
