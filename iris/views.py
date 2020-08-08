@@ -15,7 +15,7 @@ def iris(request):
         # print(type(sepal_length), sepal_width, petal_length, petal_width)
     
         #Unpickle the model
-        model = pd.read_pickle('./iris/pickles/iris_scv.pkl')
+        model = pd.read_pickle('./pickles/iris_scv.pkl')
 
         #Make prediction
         result = model.predict([[sepal_length,sepal_width,petal_length,petal_width]])
