@@ -24,7 +24,7 @@ urlpatterns = [
     path('', index, name = 'index'),
     path('admin/', admin.site.urls),
     path('iris/', include('iris.urls')),
-    path('bank_loan', include('bank_loan.urls')),
+    path('bank_loan/', include('bank_loan.urls')),
 ]
 
 if settings.DEBUG:

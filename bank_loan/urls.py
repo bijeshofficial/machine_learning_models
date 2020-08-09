@@ -19,8 +19,8 @@ from . import views
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register(r'approvals', views.ApprovalsView)
+router.register('bank_loan', views.ApprovalsView)
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('api/', include(router.urls)),
 ]
