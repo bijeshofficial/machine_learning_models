@@ -23,4 +23,5 @@ router.register('bank_loan', views.ApprovalsView)
 
 urlpatterns = [
     path('api/', include(router.urls)),
+    path('', views.bank_approval, name = 'bank_approval' )
 ]
