@@ -10,7 +10,6 @@ This is a Python Personal Project for displaying Machine Learning Models using D
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the required packages.
 
 ```bash
-cd to the directory where requirements.txt is located
 activate your virtualenv
 run: pip install requirements.txt
 ```
