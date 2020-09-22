@@ -6,7 +6,7 @@ __pycache__
 db.sqlite3
 
 # Better to not ignore media if your planning to host the project online
-# media 
+media 
 
 # Backup files # 
 *.bak 
