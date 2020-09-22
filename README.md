@@ -5,6 +5,8 @@
 
 This is a Python Personal Project for displaying Machine Learning Models using Django.
 
+This project is hosted on heroku server. If you would like to take a look visit: https://mlmodels.herokuapp.com/
+
 ## Installation
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the required packages.
