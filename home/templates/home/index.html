@@ -1,19 +1,21 @@
-{% extends 'home/base.html' %}
-{% load static %}
-{% block main %}
-    <div class="container">
-        {% for item in card %}
-            <div class="card flex-row">
-                    <img class="h-100" src={{ item.image.url }} alt= {{item.title}}>
-        <div class="card-body">
-            <h4 class="card-title">{{item.title}}</h4>
-            <p class="card-text">{{ item.description }}</p>
-            <a href="{{ item.get_absolute_url }}" class="btn btn-primary">View {{item.title}}</a>
-        </div>
+{% extends 'home/base.html' %} {% load static %} {% block main %}
+<div class="container">
+  {% for item in card %}
+  <div class="card flex-row">
+    <img
+      class="h-100"
+      style="width: 10em; height: 5em"
+      src="{% static 'images/python.png' %}"
+      alt="{{item.title}}"
+    />
+    <div class="card-body">
+      <h4 class="card-title">{{item.title}}</h4>
+      <p class="card-text">{{ item.description }}</p>
+      <a href="{{ item.get_absolute_url }}" class="btn btn-primary"
+        >View {{item.title}}</a
+      >
     </div>
-    </div>
+  </div>
+</div>
 
-    {% endfor %}
-
-
-{% endblock main %}
+{% endfor %} {% endblock main %}
